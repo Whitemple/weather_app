@@ -26,7 +26,7 @@ module.exports = {
             directory: path.join(__dirname, 'src'),
         },
         compress: true,
-        port: 3000,
+        port: 9000,
         open: true,
       },
       plugins: [
@@ -171,7 +171,7 @@ module.exports = {
     },
     performance: {
         hints: isDevelopment ? 'warning' : false,
-        maxEntrypointSize: 512000,
-        maxAssetSize: 512000
+        maxEntrypointSize: 550000,
+        maxAssetSize: 550000
     }
 }

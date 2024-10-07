@@ -1,16 +1,11 @@
 body{
-    background-color: $base-color;
-}
-h1{
     font-family: 'SairaThin';
 }
-.img{
-    background-image: url('./img/lake-mountain.jpg');
-    width: 1000px;
-    height: 500px;
-    background-size: cover;
+.searchingPanel{
+    margin-bottom: 10px;
 }
-img{
-    width: 1000px;
-    height: 500px;
+.info{
+    width: 300px;
+    border: 1px solid #000000;
+    padding: 5px;
 }
