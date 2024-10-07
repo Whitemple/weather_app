@@ -5,7 +5,9 @@
   "scripts": {
     "prod": "cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
-    "start": "cross-env NODE_ENV=development webpack serve --mode production"
+    "start": "cross-env NODE_ENV=development webpack serve --mode production",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix"
   },
   "keywords": [],
   "author": "",
@@ -13,10 +15,14 @@
   "description": "",
   "devDependencies": {
     "@babel/core": "^7.25.7",
+    "@babel/eslint-parser": "^7.25.7",
     "@babel/preset-env": "^7.25.7",
+    "@eslint/js": "^9.12.0",
     "babel-loader": "^9.2.1",
     "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
+    "eslint": "^9.12.0",
+    "globals": "^15.10.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.0",
     "image-minimizer-webpack-plugin": "^4.1.0",
