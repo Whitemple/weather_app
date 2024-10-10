@@ -10,6 +10,7 @@
     background-image: url('./img/mainBackImg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Montserrat-Regular';
 }
 .container {
     width: 80%;
@@ -34,9 +35,10 @@
         margin-right: 5px;
     }
     &__title{
-        font-size: 32px;
+        font-size: $headerFontSize;
         font-weight: 700;
-        color: #3d6ca0;
+        color: $mainColor;
+        font-family: 'Montserrat-Bold';
     }
     &__infoUserBlock{
         display: flex;
@@ -52,21 +54,21 @@
         }
     }
     &__currentLocation{
-        margin-right: 15px;
-        display: flex;
+        @include flexAlignPosition;
         justify-content: center;
-        align-items: center;
-        color: #3d6ca0;
+        margin-right: 15px;
+        color: $mainColor;
     }
     &__language{
+        @include flexAlignPosition;
+        justify-content: center;
         width: 30px;
         height: 30px;
-        border: 1px solid #3d6ca0;
+        border: 1px solid $mainColor;
         border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #3d6ca0;
+        color: $mainColor;
+        font-size: $supportFontSize;
+
         &:hover{
             cursor: pointer;
         }
@@ -82,6 +84,7 @@
         width: calc(100% - 45px);
         background-color: transparent;
         border: none;
+        font-family: 'Montserrat-Thin';
         &:focus{
             outline: none;
         }
@@ -92,16 +95,15 @@
     }
     &__historyTitle{
         margin-bottom: 15px;
-        font-size: 18px;
-        font-weight: 700;
-        color: #3d6ca0;
+        font-size: $mainFontSize;
+        color: $mainColor;
+        font-family: 'Montserrat-Thin';
     }
 }
 .form__background{
-    background-color: #fff;
+    @include flexAlignPosition;
+    background-color: $fontColor;
     height: 40px;
-    display: flex;
-    align-items: center;
     border-radius: 5px;
 }
 .btn{
@@ -116,24 +118,25 @@
 }
 .recentlyFoundCities{
     min-width: 172px;
-    background-color: #235383;
+    background-color: $secondColor;
     padding: 10px;
     border-radius: 5px;
-    color: #fff;
+    color: $fontColor;
     opacity: 80%;
     &__header{
         margin-bottom: 3px;
     }
     &__city {
-        font-size: 22px;
+        font-size: $mainFontSize;
         margin-bottom: 5px;
+        font-family: 'Montserrat-Regular';
     }
     &__country{
-        font-size: 14px;
+        font-size: $supportFontSize;
+        font-family: 'Montserrat-Thin';
     }
     &__weather{
-        display: flex;
-        align-items: center;
+        @include flexAlignPosition;
         margin-bottom: 10px;
     }
     &__icon{
@@ -145,13 +148,18 @@
     }
     &__temp{
         height: 38px;
-        font-size: 30px;
-        font-weight: 700;
+        font-size: $headerFontSize;
+        font-family: 'Montserrat-Thin';
         display: flex;
         align-items: flex-end;
     }
     &__feelsLike{
-        font-size: 12px;
+        font-size: $supportFontSize;
+        font-family: 'Montserrat-Thin';
+    }
+    &__fontCelsium{
+        opacity: .5;
+        font-family: 'Montserrat-Thin';
     }
 }
 .container__footer {
@@ -161,7 +169,7 @@
     width: 100%;
 }
 .footer {
-    font-size: 16px;
-    color: #fff;
+    font-size: $mainFontSize;
+    color: $fontColor;
     padding: 10px;
 }
