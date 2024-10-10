@@ -3,10 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,200,0,0&icon_names=search" />
     <title>Weather App</title>
 </head>
 <body>
-
-    
+    <!-- <div id="app"></div> -->
+     <div class="wrapper">
+        <div class="container">
+            <header class="container__header header">
+                <div class="header__labelBlock">
+                    <div class="header__icon"></div>
+                    <h1 class="header__title">Прогноз погоды</h1>
+                </div>
+                <div class="header__infoUserBlock">
+                    <div class="header__currentLocation">Москва</div>
+                    <div class="header__language">RU</div>
+                </div>
+            </header>
+            <main class="container__main main">
+                <form action="" class="main__form form">
+                    <div class="form__background">
+                        <button class="main__btn btn" type="submit">
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                        <input class="main__input" type="text" name="input" placeholder="Поиск">
+                    </div>
+                    
+                </form>
+                <div class="main__recentlyFoundCities recentlyFoundCities">
+                    <div class="recentlyFoundCities__header">
+                        <h2 class="recentlyFoundCities__city">Воронеж</h2>
+                        <div class="recentlyFoundCities__country">Россия</div>
+                    </div>
+                    <div class="recentlyFoundCities__weather">
+                        <div class="recentlyFoundCities__icon"></div>
+                        <div class="recentlyFoundCities__temp">6 С</div>
+                    </div>
+                    <div class="recentlyFoundCities__feelsLike">Ощущается как <span class="recentlyFoundCities__feelsLikeTemp">2 C</span></div>
+                </div>
+            </main>
+            <footer class="container__footer footer">All right recived</footer>
+        </div>
+     </div>
 </body>
 </html>

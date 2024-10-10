@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/mainBackImg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    width: 80%;
+    margin:0 auto;
+}
+.container__header {
+    padding-top: 20px;
+    margin-bottom: 40px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.header__labelBlock {
+    display: flex;
+}
+.header__icon {
+    background-image: url('./img/label_1.png');
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+}
+.header__title{
+    font-size: 32px;
+    font-weight: 700;
+    color: #3d6ca0;
+}
+.header__infoUserBlock {
+    display: flex;
+}
+.header__currentLocation {
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3d6ca0;
+}
+.header__language {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #3d6ca0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3d6ca0;
+}
+.container__main {
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main__form {
+    margin-bottom: 30px;
+}
+.form__background{
+    background-color: #fff;
+    width: 500px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+.form{
+}
+.main__input {
+    width: calc(100% - 45px);
+    background-color: transparent;
+    border: none;
+}
+.main__input:focus {
+    outline: none;
+}
+.main__btn {
+}
+.btn{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    line-height: 1;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.main__recentlyFoundCities {
+}
+.recentlyFoundCities{
+    width: 172px;
+    height: 133px;
+    background-color: #90a4bd;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+.recentlyFoundCities__city{
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+.recentlyFoundCities__country{
+    font-size: 14px;
+}
+.recentlyFoundCities__weather{
+    display: flex;
+    align-items: center;
+
+}
+.recentlyFoundCities__icon{
+    background-image: url('./img/WeatherIcon - 1-32.svg');
+    background-repeat: no-repeat;
+    height: 32px;
+    width: 38px;
+    margin-right: 10px;
+}
+.recentlyFoundCities__temp{
+    height: 38px;
+    font-size: 32px;
+    font-weight: 700;
+    display: flex;
+    align-items: flex-end;
+}
+.container__footer {
+}
+.footer {
+}
