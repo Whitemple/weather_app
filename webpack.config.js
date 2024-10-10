@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = !isDevelopment;
@@ -16,7 +17,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name]-[contenthash].js',
-        clean: true,
+        assetModuleFilename: path.join('img', '[name].[contenthash][ext]'),
+        // clean: false,
         environment: {
             arrowFunction: false
         }
@@ -29,6 +31,7 @@ module.exports = {
         port: 3000,
         open: true,
       },
+
       plugins: [
         new HtmlWebpackPlugin({
             title: 'Weather App',
@@ -41,6 +44,13 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: '[name]-[contenthash].css'
+        }),
+        new FileManagerPlugin({
+            events: {
+                onStart: {
+                    delete: ['dist'],
+                },
+            },
         }),
     ],
     module: {
@@ -77,13 +87,24 @@ module.exports = {
                 ],
             },
             // Image loader
+            // {
+            //     test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            //     type: 'asset',
+            //     generator:{
+            //         filename: 'assets/img/[contenthash][ext]'
+            //     }
+            // },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset',
-                generator:{
-                    filename: 'assets/img/[contenthash][ext]'
-                }
-            },
+                         test: /\.(png|jpg|jpeg|gif)$/i,
+                         type: 'asset/resource',
+                       },
+                       {
+                         test: /\.svg$/,
+                         type: 'asset/resource',
+                         generator: {
+                           filename: path.join('icons', '[name].[contenthash][ext]'),
+                         },
+                       },
             // Fonts loader
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,

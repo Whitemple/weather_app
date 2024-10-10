@@ -1,16 +1,113 @@
 body{
-    background-color: $base-color;
+    font-family: 'Rubik-Regular';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
 }
-h1{
-    font-family: 'SairaThin';
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 15px 50px;
+    background: linear-gradient(92.7deg, #4CB8C4 0%, #3CD3AD 100%), #232323;
 }
-.img{
-    background-image: url('./img/lake-mountain.jpg');
-    width: 1000px;
-    height: 500px;
-    background-size: cover;
+.title{
+    margin-bottom: 20px;
+    font-family: "Rubik";
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.18;
+    text-align: center;
+    color: #FFFFFF;
 }
-img{
-    width: 1000px;
-    height: 500px;
+.form {
+    display: flex;
+    justify-content: space-between;
+    width: 460px;
+    height: 54px;
+    background: #fff;
+    border-radius: 6px;
 }
+.input {
+    flex-grow: 1;
+    padding: 15px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1;
+    color: #000000;
+}
+.btn {
+    width: 145px;
+    height: 54px;
+    background: #e5464f;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1;
+    color: #fff;
+    transition: background-color .2s ease-in;
+    &:hover{
+        background: #ed0f1a;
+        cursor: pointer;
+    }
+}
+
+// Card
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 30px;
+    width: 360px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 5px 20px rgba(27, 108, 114, 0.25);
+    &::before{
+        position: absolute;
+        left: 10px;
+        bottom: -10px;
+        z-index:-1;
+        content:'';
+        display: block;
+        width: calc(100% - 20px);
+        height: 100%;
+        background: #FFFFFF;
+        box-shadow: 0px 5px 20px;
+        border-radius: 6px;
+    }
+}
+.card-city {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    color:#000000;
+}
+.card-city span{
+    display: inline-block;
+    border-radius: 6px;
+    background-color: #E5464F;
+    padding: 3px 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    vertical-align: text-top;
+}
+.card-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-value {
+}
+.card-img {
+    width: 200px;
+    height: 200px;
+}
+.card-description {
+}
+
