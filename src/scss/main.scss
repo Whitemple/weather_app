@@ -133,6 +133,9 @@
     border-radius: 5px;
     color: $fontColor;
     opacity: 80%;
+    &:hover{
+        cursor: pointer;
+    }
     &__header{
         margin-bottom: 3px;
     }
