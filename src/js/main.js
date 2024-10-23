@@ -176,7 +176,7 @@ async function showWeatherCard(city) {
         currentWeatherCard.classList.add('main__currentWeatherCard', 'currentWeatherCard');
         if(response.ok === false){
             currentWeatherCard.innerText = `${response.status}: ${response.statusText}`;
-            main.removeChild(document.querySelector('.currentWeatherCard'));
+            // main.removeChild(document.querySelector('.currentWeatherCard'));
             // main.append(currentWeatherCard);
             foundedCityContainer.innerHTML = '';
             foundedCityContainer.append(currentWeatherCard);
