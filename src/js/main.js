@@ -9,21 +9,24 @@ const currentLocation = document.querySelector('.header__currentLocation');
 currentLocation.innerHTML = '';
 const main__recentlyFoundCities = document.querySelector('.main__recentlyFoundCities');
 const main = document.querySelector('.main');
+const foundedCityContainer = document.querySelector('.main__foundedCityContainer');
 
 
 // Получение текущей геопозиции пользователя
 navigator.geolocation.getCurrentPosition( async position => {
     const { latitude, longitude } = position.coords;
     try {
-        const geolocation = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${latitude},${longitude}`;
+        const geolocation = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${latitude},${longitude}`;
         const response = await fetch(geolocation);
         const data = await response.json();
         currentLocation.innerText = (data.error) ? `${data.error.code}: ${data.error.message}` : data.location.name;
         if(data.error){
             currentLocation.innerText = `${data.error.code}: ${data.error.message}`;
         } else{
-            currentLocation.innerText = data.location.name;
-            main.append(createCurrentWeatherCard(data));
+            // currentLocation.innerText = data.location.name;
+            // main.append(createCurrentWeatherCard(data));
+            foundedCityContainer.innerHTML = '';
+            foundedCityContainer.append(createCurrentWeatherCard(data));
         }
     } catch (error) {
         currentLocation.innerText = error.message;
@@ -58,7 +61,6 @@ function saveHistoryToLocalStorage(city){
         localStorage.setItem('history', JSON.stringify(history));
     }
     let history = JSON.parse(localStorage.getItem('history'));
-    console.log(history);
     if(history.length < 3){
         !history.includes(city) && history.unshift(city);
 
@@ -174,21 +176,24 @@ async function showWeatherCard(city) {
         currentWeatherCard.classList.add('main__currentWeatherCard', 'currentWeatherCard');
         if(response.ok === false){
             currentWeatherCard.innerText = `${response.status}: ${response.statusText}`;
-            main.removeChild(document.querySelector('.currentWeatherCard'));
-            // main.innerHTML = '';
-            main.append(currentWeatherCard);
+            // main.removeChild(document.querySelector('.currentWeatherCard'));
+            // main.append(currentWeatherCard);
+            foundedCityContainer.innerHTML = '';
+            foundedCityContainer.append(currentWeatherCard);
         } else{
-            main.contains(document.querySelector('.currentWeatherCard')) ? main.removeChild(document.querySelector('.currentWeatherCard')) && main.append(createCurrentWeatherCard(data)) : main.append(createCurrentWeatherCard(data));
-            // main.innerHTML = '';
-            main.append(createCurrentWeatherCard(data));
+            // main.contains(document.querySelector('.currentWeatherCard')) ? main.removeChild(document.querySelector('.currentWeatherCard')) && main.append(createCurrentWeatherCard(data)) : main.append(createCurrentWeatherCard(data));
+            foundedCityContainer.innerHTML = '';
+            foundedCityContainer.append(createCurrentWeatherCard(data));
             saveHistoryToLocalStorage(data.location.name);
         }
     } catch (error) {
         const currentWeatherCard = document.createElement('div');
         currentWeatherCard.classList.add('main__currentWeatherCard', 'currentWeatherCard');
         currentWeatherCard.innerText = error.message;
-        main.contains(document.querySelector('.currentWeatherCard')) ? main.removeChild(document.querySelector('.currentWeatherCard')) && main.append(currentWeatherCard) : main.append(currentWeatherCard);
-        main.removeChild(document.querySelector('.currentWeatherCard'));
+        // main.contains(document.querySelector('.currentWeatherCard')) ? main.removeChild(document.querySelector('.currentWeatherCard')) && main.append(currentWeatherCard) : main.append(currentWeatherCard);
+        foundedCityContainer.innerHTML = '';
+        foundedCityContainer.append(currentWeatherCard);
+        // main.removeChild(document.querySelector('.currentWeatherCard'));
         
     }
 };
@@ -201,9 +206,7 @@ function showLocalTime(string){
 
 // Создаем карточку города с выводм всей информации
 function createCurrentWeatherCard(data){
-    console.log(data)
     const weatherInfo = showWeatherInfoRus(conditions, data.current.condition.code, data.current.is_day);
-    
     const currentWeatherCard = document.createElement('div');
     currentWeatherCard.classList.add('main__currentWeatherCard', 'currentWeatherCard');
     currentWeatherCard.innerHTML = `
