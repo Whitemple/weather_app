@@ -29,7 +29,7 @@ module.exports = {
             directory: path.join(__dirname, 'src'),
         },
         compress: true,
-        port: 9000,
+        port: 3000,
         open: true,
       },
       plugins: [

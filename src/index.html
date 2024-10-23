@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,200,0,0&icon_names=search" />
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
-    <title>Weather App</title>
+    <title>Forecast App</title>
 </head>
 <body>
     <!-- <div id="app"></div> -->
@@ -19,7 +19,6 @@
                 <div class="header__infoUserBlock">
                     <div class="header__locationLogo"></div>
                     <div class="header__currentLocation"></div>
-                    <!-- <div class="header__language">USA</div> -->
                 </div>
             </header>
             <main class="container__main main">
@@ -33,71 +32,9 @@
                     
                 </form>
                 <h2 class="main__historyTitle">Недавние местоположения</h2>
-                <div class="main__recentlyFoundCities">
-                    <!-- <div class="recentlyFoundCities"> -->
-                        <!-- <div class="recentlyFoundCities__header">
-                            <h2 class="recentlyFoundCities__city">Воронеж</h2>
-                            <div class="recentlyFoundCities__country">Россия</div>
-                        </div>
-                        <div class="recentlyFoundCities__weather weatherBlock">
-                            <div class="weatherBlock__icon"></div>
-                            <div class="weatherBlock__temp">
-                                <span aria-label="градусы Цельсия"><nobr>-10 <span class="weatherBlock__fontCelsium">&deg;C</span></nobr></span>
-                            </div>
-                        </div>
-                        <div class="recentlyFoundCities__feelsLike">Ощущается как <span class="recentlyFoundCities__feelsLikeTemp"><nobr>10 &deg;C</nobr></span></div>
-                    </div>
-                    <div class="recentlyFoundCities">
-                        <div class="recentlyFoundCities__header">
-                            <h2 class="recentlyFoundCities__city">Москва</h2>
-                            <div class="recentlyFoundCities__country">Россия</div>
-                        </div>
-                        <div class="recentlyFoundCities__weather weatherBlock">
-                            <div class="weatherBlock__icon"></div>
-                            <div class="weatherBlock__temp">
-                                <span aria-label="градусы Цельсия"><nobr>-10 <span class="weatherBlock__fontCelsium">&deg;C</span></nobr></span>
-                            </div>
-                        </div>
-                        <div class="recentlyFoundCities__feelsLike">Ощущается как <span class="recentlyFoundCities__feelsLikeTemp"><nobr>10 &deg;C</nobr></span></div>
-                    </div>
-                    <div class="recentlyFoundCities">
-                        <div class="recentlyFoundCities__header">
-                            <h2 class="recentlyFoundCities__city">Сочи</h2>
-                            <div class="recentlyFoundCities__country">Россия</div>
-                        </div>
-                        <div class="recentlyFoundCities__weather weatherBlock">
-                            <div class="weatherBlock__icon"></div>
-                            <div class="weatherBlock__temp">
-                                <span aria-label="градусы Цельсия"><nobr>-10 <span class="weatherBlock__fontCelsium">&deg;C</span></nobr></span>
-                            </div>
-                        </div>
-                        <div class="recentlyFoundCities__feelsLike">Ощущается как <span class="recentlyFoundCities__feelsLikeTemp"><nobr>10 &deg;C</nobr></span></div>
-                    </div> -->
-                </div>
-                <!-- <div class="main__currentWeatherCard currentWeatherCard">
-                    <div class="currentWeatherCard__header">
-                        <h2 class="currentWeatherCard__city">Санкт-Петербург</h2>
-                        <div class="currentWeatherCard__country">Россия</div>
-                    </div>
-                    <div class="currentWeatherCard__info">
-                        <div class="currentWeatherCard__data">
-                            <div class="recentlyFoundCities__weather weatherBlock">
-                                <div class="weatherBlock__icon"></div>
-                                <div class="weatherBlock__temp">
-                                    <span aria-label="градусы Цельсия"><nobr>-10 <span class="weatherBlock__fontCelsium">&deg;C</span></nobr></span>
-                                </div>
-                            </div>
-                            <div class="weather__feelsLike">Ощущается как <span class="weatehr__feelsLikeTemp"><nobr>10 &deg;C</nobr></span></div>
-                            <div class="currentWeatherCard__humidity">Влажность: 50%</div>
-                            <div class="currentWeatherCard__windDirection">Направление ветра: ЮЗ</div>
-                            <div class="currentWeatherCard__windSpeed">Скорость ветра: 5 м/с</div>
-                            <div class="currentWeatherCard__windSpeed">Порыв ветра: 5 м/с</div>
-                        </div>
-                        <div class="currentWeatherCard__map">Map</div>
-                    </div>
-                </div> -->
+                <div class="main__recentlyFoundCities"></div>
+                <h2 class="main__historyTitle findedCity">Найденный город</h2>
             </main>
-            <footer class="container__footer footer">All right recived &#169;</footer>
         </div>
      </div>
 </body>

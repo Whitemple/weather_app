@@ -6,15 +6,18 @@
 
 .wrapper {
     width: 100vw;
-    height: 100vh;
+    
     background-image: url('./img/mainBackImg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Montserrat-Regular';
+    @media screen and (min-width: ($maxWidth+1)){
+        height: 100vh;
+    }
 }
 .container {
     width: 80%;
-    height: 100vh;
+
     margin:0 auto;
     position: relative;
     &__header{
@@ -33,12 +36,18 @@
         width: 32px;
         height: 32px;
         margin-right: 5px;
+        @media screen and (max-width: $maxWidth){
+            display: none;
+        }
     }
     &__title{
         font-size: $headerFontSize;
         font-weight: 700;
         color: $mainColor;
         font-family: 'Montserrat-Bold';
+        @media screen and (max-width: $maxWidth){
+            width: 150px;
+        }
     }
     &__infoUserBlock{
         display: flex;
@@ -49,8 +58,8 @@
         background-position: center;
         width: 32px;
         height: 32px;
-        &:hover{
-            cursor: pointer;
+        @media screen and (max-width: $maxWidth){
+            display: none;
         }
     }
     &__currentLocation{
@@ -75,7 +84,7 @@
     }
 }
 .main {
-    width: 556px;
+    max-width: 556px;
     margin: 0 auto;
     &__form{
         margin-bottom: 30px;
@@ -88,26 +97,27 @@
         &:focus{
             outline: none;
         }
-        // &:-webkit-autofill,
-        // &:-webkit-autofill:hover, 
-        // &:-webkit-autofill:focus, 
-        // &:-webkit-autofill:active{
-        //     -webkit-background-clip: text;
-        //     -webkit-text-fill-color: #000000;
-        //     box-shadow: 0 0 0px 1000px white inset;
-        // }
-        
     }
     &__recentlyFoundCities{
         display: flex;
         gap: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
+        @media screen and (max-width: $maxWidth){
+            flex-direction: column;
+        }
     }
     &__historyTitle{
         margin-bottom: 15px;
         font-size: $mainFontSize;
         color: $mainColor;
         font-family: 'Montserrat-Thin';
+    }
+}
+.findedCity{
+    display: none;
+    color: $fontColor;
+    @media screen and (max-width: $maxWidth){
+        display: block;
     }
 }
 .form__background{
@@ -138,6 +148,9 @@
     }
     &__header{
         margin-bottom: 3px;
+        @media screen and (max-width: $maxWidth){
+            margin-bottom: 5px;
+        }
     }
     &__city {
         font-size: $mainFontSize;
@@ -148,27 +161,10 @@
         font-size: $supportFontSize;
         font-family: 'Montserrat-Thin';
     }
-    // &__weather{
-    //     @include flexAlignPosition;
-    //     margin-bottom: 10px;
-    // }
-    // &__icon{
-    //     background-image: url('./img/WeatherIcon - 1-32.svg');
-    //     background-repeat: no-repeat;
-    //     height: 32px;
-    //     width: 38px;
-    //     margin-right: 10px;
-    // }
-    // &__temp{
-    //     height: 38px;
-    //     font-size: $headerFontSize;
-    //     font-family: 'Montserrat-Thin';
-    //     display: flex;
-    //     align-items: flex-end;
-    // }
-    &__feelsLike{
+    &__littleDescription{
         font-size: $supportFontSize;
         font-family: 'Montserrat-Thin';
+        margin-bottom: 5px;
     }
     &__fontCelsium{
         opacity: .5;
@@ -179,11 +175,14 @@
     @include flexAlignPosition;
     margin-bottom: 10px;
     &__icon{
-        background-image: url('./img/cloud.svg');
+        // background-image: url('./img/cloud.svg');
         background-repeat: no-repeat;
-        height: 32px;
+        height: 38px;
         width: 38px;
         margin-right: 10px;
+        @media screen and (max-width: $maxWidth){
+            display: none;
+        }
     }
     &__temp{
         height: 38px;
@@ -191,6 +190,10 @@
         font-family: 'Montserrat-Thin';
         display: flex;
         align-items: flex-end;
+        @media screen and (max-width: $maxWidth){
+            height: 20px;
+            font-size: $mainFontSize;
+        }
     }
 }
 .currentWeatherCard{
@@ -198,6 +201,9 @@
     border-radius: 5px;
     padding: 10px;
     color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     &__header{
         margin-bottom: 10px;
     }
@@ -221,17 +227,22 @@
             margin-bottom: 10px;
         }
     }
-
-
-}
-.container__footer {
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-}
-.footer {
-    font-size: $mainFontSize;
-    color: $fontColor;
-    padding: 10px;
+    &__map{
+        height: 205px;
+        width: 250px;
+        @media screen and (max-width: $maxWidth){
+            display: none;
+        }
+    }
+    &__localDate{
+        padding-top: 23px;
+        display: block;
+        font-size: 14px;
+        font-family: "Montserrat-Thin";
+        margin-bottom: 10px;
+    }
+    &__time{
+        font-size: 32px;
+        font-family: "Montserrat-Thin";
+    }
 }
