@@ -15,7 +15,7 @@ const main = document.querySelector('.main');
 navigator.geolocation.getCurrentPosition( async position => {
     const { latitude, longitude } = position.coords;
     try {
-        const geolocation = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${latitude},${longitude}`;
+        const geolocation = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${latitude},${longitude}`;
         const response = await fetch(geolocation);
         const data = await response.json();
         currentLocation.innerText = (data.error) ? `${data.error.code}: ${data.error.message}` : data.location.name;
