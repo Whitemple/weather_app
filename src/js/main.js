@@ -186,7 +186,7 @@ async function showWeatherCard(city) {
     } catch (error) {
         const currentWeatherCard = document.createElement('div');
         currentWeatherCard.classList.add('main__currentWeatherCard', 'currentWeatherCard');
-        main.removeChild(document.querySelector('.currentWeatherCard'));
+        main.innerHTML = '';
         currentWeatherCard.innerText = error.message;
     }
 };
