@@ -174,20 +174,22 @@ async function showWeatherCard(city) {
         currentWeatherCard.classList.add('main__currentWeatherCard', 'currentWeatherCard');
         if(response.ok === false){
             currentWeatherCard.innerText = `${response.status}: ${response.statusText}`;
-            // main.removeChild(document.querySelector('.currentWeatherCard'));
-            main.innerHTML = '';
+            main.removeChild(document.querySelector('.currentWeatherCard'));
+            // main.innerHTML = '';
             main.append(currentWeatherCard);
         } else{
-            // main.contains(document.querySelector('.currentWeatherCard')) ? main.removeChild(document.querySelector('.currentWeatherCard')) && main.append(createCurrentWeatherCard(data)) : main.append(createCurrentWeatherCard(data));
-            main.innerHTML = '';
+            main.contains(document.querySelector('.currentWeatherCard')) ? main.removeChild(document.querySelector('.currentWeatherCard')) && main.append(createCurrentWeatherCard(data)) : main.append(createCurrentWeatherCard(data));
+            // main.innerHTML = '';
             main.append(createCurrentWeatherCard(data));
             saveHistoryToLocalStorage(data.location.name);
         }
     } catch (error) {
         const currentWeatherCard = document.createElement('div');
         currentWeatherCard.classList.add('main__currentWeatherCard', 'currentWeatherCard');
-        main.innerHTML = '';
         currentWeatherCard.innerText = error.message;
+        main.contains(document.querySelector('.currentWeatherCard')) ? main.removeChild(document.querySelector('.currentWeatherCard')) && main.append(currentWeatherCard) : main.append(currentWeatherCard);
+        main.removeChild(document.querySelector('.currentWeatherCard'));
+        
     }
 };
 
